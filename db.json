@@ -1,0 +1,36 @@
+
+{
+  "blog": [
+    {
+      "id": 1,
+      "title": "The land of free",
+      "image": "https://img.freepik.com/premium-photo/teacher-s-desk-which-writing-materials-lie-evening-lamp_89381-1561.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699574400&semt=ais",
+      "briefDescription": "A brief overview of Post 1. This post discusses the fundamentals of educational blogging."
+    },
+    {
+      "id": 2,
+      "title": "The land of Meriosa",
+      "image": "https://img.freepik.com/premium-photo/books-with-stairs-sky-with-cloudsgenerative-ai_391052-11895.jpg?size=626&ext=jpg&ga=GA1.1.1826414947.1699833600&semt=ais",
+      "briefDescription": "An in-depth look at Post 2. This post explores advanced topics in educational content creation."
+    },
+    {
+      "id": 3,
+      "title": "The land of Gabiosa",
+      "image": "https://img.freepik.com/premium-photo/teacher-s-desk-which-writing-materials-lie-evening-lamp_89381-1561.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699574400&semt=ais",
+      "briefDescription": "Exploring the impact of Post 3. This post delves into the effects of educational blogging on student engagement."
+    },
+    {
+      "id": 4,
+      "title": "The land of Fulona",
+      "image": "https://img.freepik.com/premium-photo/books-with-stairs-sky-with-cloudsgenerative-ai_391052-11895.jpg?size=626&ext=jpg&ga=GA1.1.1826414947.1699833600&semt=ais",
+      "briefDescription": "Exploring the impact of Post 3. This post delves into the effects of educational blogging on student engagement."
+    },
+    {
+      "id": 5,
+      "title": "The land of Fulona",
+      "image": "https://img.freepik.com/premium-photo/books-with-stairs-sky-with-cloudsgenerative-ai_391052-11895.jpg?size=626&ext=jpg&ga=GA1.1.1826414947.1699833600&semt=ais",
+      "briefDescription": "Exploring the impact of Post 3. This post delves into the effects of educational blogging on student engagement."
+    }
+   
+  ]
+}

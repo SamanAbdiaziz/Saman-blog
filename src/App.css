@@ -1,38 +1,263 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,400;1,900&display=swap');
+
+
+body {
+  font-family: 'Playfair';
+  margin: 0;
+  padding: 0;
+  background-color: rgb(0, 0, 0);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1{
+  color: #f2f2f2;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+p{
+  color: #f2f2f2;
 }
+/* Navbar Css */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar {
+  background-color: rgb(7, 7, 7); 
+  color: #ddd1d1;
+  border-color: blanchedalmond;
   display: flex;
-  flex-direction: column;
+  justify-content: space-around; /* Adjusts items to each end */
+  align-items: center;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, auto); /* adjust the number of columns as needed */
+  gap: 70px; /* Adjust the gap size */
+}
+
+.navbar li {
+  margin: 0 20px;
+  margin-right: 50px;
+  
+}
+
+nav ul li {
+  margin-right: 20px; /* Adjust the value as needed */
+}
+
+
+.navbar a {
+  text-decoration: none;
+  color: rgb(67, 129, 237);
+  font-weight: bold;
+  font-size: 25px;
+  transition: color 0.3s;
+ 
+}
+
+.navbar a:hover {
+  color: #ff6600;
+ 
+}
+
+nav img {
+  height: 200px;
+  width: 30vh; /* Adjust the size as needed */
+
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .navbar ul {
+    grid-template-columns: 1fr; /* Stack items vertically */
+    gap: 20px; /* Reduce the gap for smaller screens */
+    margin-right: 10px;
+  }
+
+  .navbar li {
+    margin: 0; /* Adjust margins for smaller screens */
+  }
+
+  /* Any other adjustments for smaller screens */
+}
+
+/* landingpage css */
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 100px;
+  gap: 40px; /* Space between cards */
+  justify-content: center; /* Center cards in the container */
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #f6eeee; /* Dark color for the title */
+  font-size: 1.2em; /* Adjust the size as needed */
+}
+
+.card p {
+  color: #3584a3; /* Lighter color for the summary */
+}
+
+.card a {
+  text-decoration: none;
+  color: #007BFF; /* Bright color for the link */
+  font-weight: bold;
+  padding: 8px 16px;
+  background-color: #f2f2f2; /* Light background for the button */
+  border-radius: 4px; /* Rounded corners for the button */
+  display: inline-block; /* Make the link a block element */
+  transition: background-color 0.3s ease;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.card a:hover {
+  background-color: #011015; /* Slightly darker on hover */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+.card {
+  background-color: #1c1919; /* Light background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 8px; /* Rounded corners */
+  padding: 10px; /* Internal spacing */
+  max-width: 500px; /* Maximum width of each card */
+  margin: auto; /* Center each card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover effects */
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.card-img {
+  width: 100%; /* Ensure the image takes the full width of the card */
+  height: auto; /* Maintain aspect ratio */
+  border-top-left-radius: 8px; /* Match the card's border-radius */
+  border-top-right-radius: 8px; /* Match the card's border-radius */
+  object-fit: cover; /* Ensures the image covers the area nicely */
+}
+
+@media screen and (max-width: 768px) {
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 10px;
+    gap: 40px; /* Space between cards */
+    justify-content: center; /* Center cards in the container */
   }
-  to {
-    transform: rotate(360deg);
+  .card-img {
+    width: 100%; /* Ensure the image takes the full width of the card */
+    height: auto; /* Maintain aspect ratio */
+   
   }
+
+  .card {
+    background-color: #1c1919; /* Light background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px; /* Internal spacing */
+    width: 100%;
+    margin: auto; /* Center each card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover effects */
+    overflow: hidden;
+  }
+}
+
+/* image slider css */
+.image-slider-container {
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: center; /* Aligns children (images) in the center */
+  align-items: center; /* Aligns children vertically */
+  border: none;
+  box-shadow: none;
+}
+
+.image-slider-container img {
+  width: 150vh;
+  height: auto;
+  border-radius: 10px;
+  display: block; /* Eliminates bottom space under the image */
+  transition: all 5s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+  .image-slider-container img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+/* For the scrollbar track */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px; /* You can set width and height for your scrollbar */
+}
+
+/* For the scrollbar handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(12, 91, 187);
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* blogs style */
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 50px;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.container img{
+  width: auto; /* Fixed width */
+  height: auto; /* Fixed height */
+  object-fit: cover; /* This will prevent distortion */
+}
+
+.container h3{
+  color: #f6eeee;
+ 
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 10px;
+    gap: 40px; /* Space between cards */
+    justify-content: space-between; /* Center cards in the container */
+  }
+
+  .container img{
+    width: 100%; /* Fixed width */
+    height: auto; /* Fixed height */
+     
+  }
+  
 }
