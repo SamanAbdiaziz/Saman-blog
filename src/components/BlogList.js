@@ -13,15 +13,15 @@ function BlogList() {
 
   return (
     <div className='container'>
-      {posts.map(post => (
-        <div key={post.id}>
-          <h3>{post.title}</h3>
-          <img src={post.image} alt={post.title} />
-          <p>{post.briefDescription}</p>
-          <Link to={`/blog/${post.id}`}>Read More</Link><br />
-        </div>
-      ))}
-    </div>
+    {posts.map(post => (
+      <div key={post.id}>
+        <h3>{post.title}</h3>
+        <img src={post.image} alt={post.title} />
+        <p>{post.briefDescription}</p>
+        <Link to={`/blog/${post.id}`}>Read More</Link>
+      </div>
+    ))}
+  </div>
   );
 }
 

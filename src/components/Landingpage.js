@@ -14,7 +14,21 @@ const images = [
   ];
 function Landingpage(){
     const [posts, setPosts] = useState([]);
+    const [isScrolled, setIsScrolled] = useState(false);
 
+    useEffect(() => {
+      const handleScroll = () => {
+        // Set to true if scrolled past a certain point (e.g., 200px)
+        setIsScrolled(window.scrollY > 600);
+      };
+    
+      // Listen for scroll events
+      window.addEventListener('scroll', handleScroll);
+    
+      // Clean up the event listener
+      return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+    
     useEffect(() => {
         fetch('http://localhost:8001/blog') 
           .then(response => response.json())
@@ -25,7 +39,9 @@ function Landingpage(){
 
   return (
     <div>
-      <ImageSlider images={images} interval={5000} /> {/* 3000ms = 3 seconds */}<br />
+      <div className={`image-slider ${isScrolled ? 'image-slider-hidden' : ''}`}>
+        <ImageSlider images={images} interval={5000} />
+      </div>
 
     <div className="card-container">
     {posts.map(post => (
