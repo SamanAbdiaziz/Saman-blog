@@ -14,14 +14,15 @@ function BlogList() {
   return (
     <div className='container'>
     {posts.map(post => (
-      <div key={post.id}>
+      <div key={post.id} className="card">
         <h3>{post.title}</h3>
-        <img src={post.image} alt={post.title} />
+        <img src={post.image} alt={post.title} className="card-img"/>
         <p>{post.briefDescription}</p>
         <Link to={`/blog/${post.id}`}>Read More</Link>
       </div>
     ))}
   </div>
+  
   );
 }
 
