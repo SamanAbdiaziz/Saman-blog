@@ -1,103 +1,128 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,400;1,900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,400;1,900&display=swap");
 
 body {
-  font-family: 'Playfair';
+  font-family: "Playfair Display", serif;
   margin: 0;
   padding: 0;
-  background-color: rgb(5, 5, 5);
+  background-color: #282d2f; /* A modern, neutral color */
 }
 
-h1{
-  color: #f4efef;
+h1 {
+  color: #f8f1f1;
+  font-size: 35px;
   text-align: center;
   text-decoration: underline;
 }
 
-p{
+p {
   color: #f8f6f6;
   text-align: center;
   text-decoration: none;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: 18px;
 }
 
-h2{
+h2 {
   color: #f4efef;
   text-align: center;
 }
 
-/* Navbar Css */
+/******************************************************************************/
+/* Navbar Styles */
+/******************************************************************************/
 
 .navbar {
-  background-color: rgb(7, 7, 7); 
-  color: #ddd1d1;
-  border-color: blanchedalmond;
+  background-color: #242a2c;
   display: flex;
-  justify-content: space-around; /* Adjusts items to each end */
+  justify-content: space-between;
   align-items: center;
+  padding: 0 20px;
 }
 
-.navbar ul {
-  list-style: none;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(3, auto); /* adjust the number of columns as needed */
-  gap: 70px; /* Adjust the gap size */
+.navbar-logo {
+  max-width: 180px;
+  max-height: 50px;
 }
 
-.navbar li {
-  margin: 0 20px;
-  margin-right: 50px;
+.navbar img {
+  height: auto; /* Maintain aspect ratio */
+  width: auto; /* Adjust as needed */
+  max-width: 200px; /* Adjust as needed */
+  max-height: 150px; /* Adjust as needed */
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
   
 }
 
-nav ul li {
-  margin-right: 20px; /* Adjust the value as needed */
+.hamburger .line {
+  width: 25px;
+  height: 3px;
+  background-color: #007bff;
+  margin: 5px;
+}
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-
-.navbar a {
+.nav-links a {
+  color: white;
   text-decoration: none;
-  color: rgb(67, 129, 237);
-  font-weight: bold;
-  font-size: 25px;
+  margin: 0 60px; /* Adjust as needed */
   transition: color 0.3s;
- 
+  font-size: 30px;
 }
 
-.navbar a:hover {
-  color: #ff6600;
- 
+.nav-links a:hover {
+  color: #ff6600; /* Highlight color on hover */
 }
 
-nav img {
-  height: 200px;
-  width: 30vh; /* Adjust the size as needed */
-
-}
-
+/* Responsive Styles for Smaller Screens */
 @media screen and (max-width: 768px) {
-  .navbar {
-    flex-direction: row;
-    align-items: center;
+  .hamburger {
+    display: block;
   }
 
-  .navbar ul {
-    grid-template-columns: 1fr; /* Stack items vertically */
-    gap: 20px; /* Reduce the gap for smaller screens */
-    margin-right: 10px;
+  .nav-links {
+    position: absolute;
+    top: 100%; /* Align right below the navbar */
+    right: 120px;
+    left: 120px; /* Added for full width */
+    background-color: #0f0303;
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    z-index: 1000; /* Ensures it's above other content */
+    border-radius: 10px;
   }
 
-  .navbar li {
-    margin: 0; /* Adjust margins for smaller screens */
+  .nav-links.open {
+    display: flex;
   }
 
-  /* Any other adjustments for smaller screens */
+  .nav-links a {
+    padding: 10px;
+    border-bottom: 1px solid #fff;
+   
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
 }
 
+/******************************************************************************/
 /* landingpage css */
+/******************************************************************************/
 
+.landingpage-container {
+ margin: 100px auto;
+ margin-top: 100px;
+}
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -119,7 +144,7 @@ nav img {
 
 .card a {
   text-decoration: none;
-  color: #007BFF; /* Bright color for the link */
+  color: #007bff; /* Bright color for the link */
   font-weight: bold;
   padding: 8px 16px;
   background-color: #f2f2f2; /* Light background for the button */
@@ -134,7 +159,6 @@ nav img {
 .card a:hover {
   background-color: #011015; /* Slightly darker on hover */
 }
-
 
 .card {
   background-color: #010f12; /* Light background */
@@ -161,7 +185,6 @@ nav img {
 }
 
 @media screen and (max-width: 768px) {
-
   .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -191,14 +214,24 @@ nav img {
 
 /* image slider css */
 .image-slider-container {
+  margin: 0 auto;
   width: 100%;
-  margin: auto;
   overflow: hidden;
   display: flex;
   justify-content: center; /* Aligns children (images) in the center */
   align-items: center; /* Aligns children vertically */
   border: none;
   box-shadow: none;
+  position: relative;
+}
+
+.slider-logo {
+  position: absolute;
+  bottom: 50px; /* Adjust as needed */
+  left: 180px; /* Adjust as needed */
+  width: 50px; /* Adjust the size of your logo */
+  height: 50px;
+  z-index: 10; /* Ensure the logo is above the slider images */
 }
 
 .image-slider-container img {
@@ -214,6 +247,12 @@ nav img {
     width: 100%;
     height: auto;
   }
+
+  .slider-logo {
+    top: 5px;
+    left: 5px;
+    width: 50px; /* Smaller logo for mobile screens */
+  }
 }
 
 .image-slider {
@@ -223,8 +262,6 @@ nav img {
 .image-slider-hidden {
   transform: translateY(-100%); /* Slide out of view */
 }
-
-
 
 /* For the scrollbar track */
 ::-webkit-scrollbar {
@@ -243,9 +280,13 @@ nav img {
   background: #555;
 }
 
-/* blogs style */
 
+
+/******************************************************************************/
+/* BLOGS CSS */
+/******************************************************************************/
 .container {
+  margin: 100px auto;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -255,15 +296,14 @@ nav img {
   align-items: center;
 }
 
-.container img{
+.container img {
   width: auto; /* Fixed width */
   height: auto; /* Fixed height */
   object-fit: cover; /* This will prevent distortion */
 }
 
-.container h3{
+.container h3 {
   color: #f6eeee;
- 
 }
 
 @media screen and (max-width: 768px) {
@@ -276,22 +316,22 @@ nav img {
     justify-content: space-between; /* Center cards in the container */
   }
 
-  .container img{
+  .container img {
     width: 100%; /* Fixed width */
     height: auto; /* Fixed height */
-     
   }
-  
 }
 
+/******************************************************************************/
 /* About css section */
-
 /* About.css */
+/******************************************************************************/
 .about-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
   font-family: Arial, sans-serif;
+ 
 }
 
 .about-content {
@@ -313,7 +353,7 @@ nav img {
 .image-section img {
   width: 100%;
   height: auto;
-  border-radius: 10px
+  border-radius: 10px;
 }
 
 /* Responsive Styles */
@@ -325,7 +365,8 @@ nav img {
     align-items: center;
   }
 
-  .bio-section, .image-section {
+  .bio-section,
+  .image-section {
     padding-right: 0;
     padding-left: 0;
     width: 100%;
@@ -340,6 +381,7 @@ nav img {
 @media (max-width: 480px) {
   .about-container {
     padding: 10px;
+    
   }
 
   h1 {

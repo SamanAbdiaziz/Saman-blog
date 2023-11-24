@@ -12,17 +12,22 @@ function BlogList() {
   }, []);
 
   return (
-    <div className='container'>
-    {posts.map(post => (
-      <div key={post.id} className="card">
-        <h3>{post.title}</h3>
-        <img src={post.image} alt={post.title} className="card-img"/>
-        <p>{post.briefDescription}</p>
-        <Link to={`/blog/${post.id}`}>Read More</Link>
+    <div className="container">
+      <div className="row">
+        {posts.map(post => (
+          <div key={post.id} className="col-md-4 mb-3">
+            <div className="card">
+              <img src={post.image} alt={post.title} className="card-img-top" />
+              <div className="card-body">
+                <h5 className="card-title">{post.title}</h5>
+                <p className="card-text">{post.briefDescription}</p>
+                <Link to={`/blog/${post.id}`} className="btn btn-primary">Read More</Link>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
-    ))}
-  </div>
-  
+    </div>
   );
 }
 

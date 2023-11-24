@@ -4,6 +4,9 @@ import BlogList from "./components/BlogList";
 import Blog from "./components/Blog";
 import About from "./components/About";
 import Landingpage from "./components/Landingpage";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'flowbite/dist/flowbite.css';
+import Footer from "./components/Footer";
 import "./App.css";
 
 function App() {
@@ -17,6 +20,7 @@ function App() {
           <Route path="/blog/:postId" element={<Blog />} />
           <Route path="/about" element={<About />} />
         </Routes>
+        <Footer />
     </div>
   </BrowserRouter>
   );

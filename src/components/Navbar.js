@@ -1,13 +1,23 @@
-import React from 'react';
-import logo from '../assests/Dr Adan Saman-logos_white.png'
+import React, { useState } from 'react';
+import logo from '../assests/Dr Adan Saman-logos_white.png';
 import { NavLink } from 'react-router-dom';
 
 function Navbar() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
 
     return (
         <nav className="navbar">
-            <img src={logo} alt="Logo" />
-            <ul>
+            <img src={logo} alt="Logo" className="navbar-logo" />
+            <div className="hamburger" onClick={toggleMenu}>
+                <div className="line"></div>
+                <div className="line"></div>
+                <div className="line"></div>
+            </div>
+            <ul className={`nav-links ${isMenuOpen ? "open" : ""}`}>
                 <li><NavLink
                     to="/"
                     end
@@ -24,6 +34,6 @@ function Navbar() {
             </ul>
         </nav>
     );
-};
+}
 
 export default Navbar;

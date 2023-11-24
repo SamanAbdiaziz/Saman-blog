@@ -4,10 +4,10 @@ import imgadan from '../assests/imgadan.jpg';
 function About() {
   return (
     <div className="about-container">
-      <h1>About Me</h1>
+      <h1>About Me</h1><br />
       <div className="about-content">
         <div className="bio-section">
-          <h2>My Journey in Education</h2>
+          <h2>My Journey in Education</h2><br />
           <p>
             With over 25 years of experience in the education sector, I am a seasoned Curriculum Specialist. 
             Currently, I am contributing my expertise to Adam Smith International as a Curriculum Expert on the 
@@ -27,11 +27,11 @@ function About() {
             My educational background and practical experience equip me to drive positive changes in educational 
             systems worldwide.
           </p>
-        </div>
+        </div><br />
         <div className="image-section">
           <img src={imgadan} alt="Curriculum Specialist" />
-        </div>
-      </div>
+        </div><br />
+      </div><br /><br />
     </div>
   );
 }

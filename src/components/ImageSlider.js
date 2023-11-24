@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import logo from '../assests/Dr Adan Saman-logos_white.png'
 
 function ImageSlider({ images, interval }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -13,11 +14,13 @@ function ImageSlider({ images, interval }) {
     return () => clearInterval(timer);
   }, [images.length, interval]);
 
+  
+
   console.log(ImageSlider);
   return (
     <div className="image-slider-container">
       <img src={images[currentImageIndex]} alt="Slider" />
-
+      <img src={logo} alt="Logo" className="slider-logo"/>
     </div>
   );
 }
