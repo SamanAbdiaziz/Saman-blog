@@ -1,0 +1,165 @@
+
+/******************************************************************************/
+/* landingpage css */
+/******************************************************************************/
+body {
+
+  background-color: wheat;
+  margin: 0%;
+
+}
+
+
+hr {
+  border: none;
+  border-top: 1px solid black; /* Change 'black' to your desired color */
+}
+
+.landingpage-container {
+   
+    width: 100%;
+    height: 100%;
+    margin: 100px auto;
+    margin-top: 100px;
+   }
+
+    .landingpage-container h1 {
+      color: #f6eeee;
+      font-size: 2.5em;
+      text-align: center;
+      margin-bottom: 50px;
+      margin-top: 50px;
+    }
+
+    .landingpage-container p {
+      color: #3584a3;
+      font-size: 1.5em;
+      text-align: center;
+      margin-bottom: 50px;
+      margin-top: 50px;
+    }
+
+    .landingpage-container h2 {
+      color: #5a0b0b;
+      font-weight: 1000;
+      font-size: 30px;
+      text-align: center;
+      margin-bottom: 10px;
+      margin-top: 10px;
+      font-family: 'Lora', serif;
+    
+    }
+   .card-container {
+     display: flex;
+     flex-wrap: wrap;
+     flex-direction: row;
+     padding: 200px;
+     gap: 20px; /* Space between cards */
+     justify-content: center; /* Center cards in the container */
+   }
+   
+   .card-title {
+     margin-top: 0;
+     color: #0578fa; /* Dark color for the title */
+     font-size: 20px; /* Adjust the size as needed */
+     text-align: center;
+     font-family: 'Lora', serif;
+     margin-top: 10px;
+   }
+   
+   .card p {
+     color: #cbd3d6; /* Lighter color for the summary */
+      font-size: 1em; 
+      margin-bottom: 30px;
+      margin-top: auto;
+   }
+   
+   .card a {
+     text-decoration: none;
+     color: #007bff; /* Bright color for the link */
+     font-weight: bold;
+     padding: 8px 16px;
+     background-color: #f2f2f2; /* Light background for the button */
+     border-radius: 4px; /* Rounded corners for the button */
+     display: inline-block; /* Make the link a block element */
+     transition: background-color 0.3s ease;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+   }
+   
+   .card a:hover {
+     background-color: rgb(211, 20, 45); /* Slightly darker on hover */
+   }
+   
+   .card {
+     background-color: #010f12; /* Light background */
+     box-shadow: 0 4px 8px rgba((231, 243, 243, 0.5)); /* Subtle shadow for depth */
+     border-radius: 8px; /* Rounded corners */
+     padding: 10px; /* Internal spacing */
+     max-width: 500px; /* Maximum width of each card */
+     margin: auto; /* Center each card */
+     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover effects */
+     overflow: hidden;
+   }
+   
+   .card:hover {
+     transform: translateY(-5px); /* Slight lift on hover */
+     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+   }
+   
+   .card-img {
+     width: 100%; /* Ensure the image takes the full width of the card */
+     height: auto; /* Maintain aspect ratio */
+     border-top-left-radius: 8px; /* Match the card's border-radius */
+     border-top-right-radius: 8px; /* Match the card's border-radius */
+     object-fit: cover; /* Ensures the image covers the area nicely */
+   }
+   
+    /* Media queries for mobile */
+   @media screen and (max-width: 768px) {
+     .card-container {
+       display: flex;
+       flex-wrap: wrap;
+       flex-direction: row;
+       padding: 10px;
+       gap: 40px; /* Space between cards */
+       justify-content: center; /* Center cards in the container */
+     }
+     .card-img {
+       width: 100%;
+       height: 200px; /* Fixed height for uniformity */
+       object-fit: cover;
+     }
+   
+     .card {
+       background-color: #0f0e0e; /* Light background */
+       box-shadow: 0 4px 8px rgba(220, 205, 205, 0.1); /* Subtle shadow for depth */
+       border-radius: 8px; /* Rounded corners */
+       padding: 10px; /* Internal spacing */
+       width: 100%;
+       max-width: 300px; /* Adjust as needed */
+       margin: 0 auto; /* Centering the card */
+       transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover effects */
+       overflow: hidden;
+     }
+   }
+   
+   
+   /* For the scrollbar track */
+   ::-webkit-scrollbar {
+     width: 10px;
+     height: 10px; /* You can set width and height for your scrollbar */
+   }
+   
+   /* For the scrollbar handle */
+   ::-webkit-scrollbar-thumb {
+     background: rgb(16, 16, 16);
+     border-radius: 5px;
+   }
+   
+   /* Handle on hover */
+   ::-webkit-scrollbar-thumb:hover {
+     background: #555;
+   }
+   
