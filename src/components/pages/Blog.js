@@ -9,7 +9,7 @@ function Blog() {
 
   useEffect(() => {
     if (postId) {
-      fetch(`http://localhost:8001/blog/${postId}`)
+      fetch(`https://djsonserved.glitch.me/blog/${postId}`)
         .then(response => response.json())
         .then(data => setPost(data))
         .catch(error => console.error('Error fetching data:', error));
@@ -33,3 +33,4 @@ function Blog() {
 }
 
 export default Blog;
+

@@ -18,7 +18,7 @@ function Landingpage() {
   }, []);
 
   useEffect(() => {
-    fetch('http://localhost:8001/blog')
+    fetch('https://djsonserved.glitch.me/blog')
       .then(response => response.json())
       .then(data => setPosts(data))
       .catch(error => console.error('Error fetching data:', error));

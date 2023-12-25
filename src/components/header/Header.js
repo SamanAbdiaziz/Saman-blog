@@ -10,7 +10,7 @@ function Header() {
         <span className="headerTitleLg">Educational Blog</span>
       </div>
 
-      <img className="headerImg" src={image} alt="" /><br />
+      <img className="headerImg" src={image} alt="students graduating" /><br />
       <br />
       <br />
       <hr />

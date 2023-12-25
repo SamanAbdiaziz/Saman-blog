@@ -1,14 +1,47 @@
-import React from "react";
-import "./sidebar.css";
-import image from "../../assests/imuges.jpg";
+import React, { useState, useEffect, useRef } from 'react';
+import './sidebar.css';
+import image from '../../assests/imuges.jpg';
 
 function Sidebar() {
+  const [isVisible, setIsVisible] = useState(false);
+  const sidebarRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
+      },
+      {
+        threshold: 0.7 // Adjust as needed
+      }
+    );
+  
+    const currentSidebarRef = sidebarRef.current; // Store the current value of the ref
+    if (currentSidebarRef) {
+      observer.observe(currentSidebarRef);
+    }
+  
+    return () => {
+      if (currentSidebarRef) {
+        observer.unobserve(currentSidebarRef); // Use the stored reference value
+      }
+    };
+  }, []); // Empty dependency array means this effect runs once on mount and then on unmount
+  
+
   return (
-    <div className="sidebar">
+    <div
+      ref={sidebarRef}
+      className={`sidebar ${isVisible ? 'visible' : ''}`}
+    >
         <div className="image-container">
         <img
           src={image}
-          alt=""  className="blend-image"
+          alt="educational img"  className="blend-image"
         />
         </div>
         <div className="sidebarItem">
