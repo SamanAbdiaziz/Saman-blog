@@ -1,4 +1,4 @@
-![project-image03](https://github.com/SamanAbdiaziz/Saman-blog/assets/151468893/2a3b8886-5de1-4150-bad3-bcb6ff1d891d)# React Educational Blog
+# React Educational Blog
 
 Welcome to the React Educational Blog, a platform dedicated to the power of education in nurturing minds and shaping futures.
 
