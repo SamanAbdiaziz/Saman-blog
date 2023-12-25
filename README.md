@@ -40,8 +40,8 @@ cd react-educational-blog
 npm install
 Start the development server:
 
-```
 Copy code
+```
 npm start
 ```
 
