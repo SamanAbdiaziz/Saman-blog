@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import './landingpage.css';
-import Sidebar from '../sidebar/Sidebar';
-import Header from '../header/Header';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import ReactPlayer from 'react-player';
+import "./landingpage.css";
+import Sidebar from "../sidebar/Sidebar";
+import Header from "../header/Header";
 
 function Landingpage() {
   const [posts, setPosts] = useState([]);
@@ -13,35 +14,54 @@ function Landingpage() {
       setIsScrolled(window.scrollY > 600);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
-    fetch('https://djsonserved.glitch.me/blog')
-      .then(response => response.json())
-      .then(data => setPosts(data))
-      .catch(error => console.error('Error fetching data:', error));
+    fetch("https://djsonserved.glitch.me/blog")
+      .then((response) => response.json())
+      .then((data) => setPosts(data))
+      .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
   return (
-    <div className={`landingpage-container ${isScrolled ? 'scrolled' : ''}`}>
+    <div className={`landingpage-container ${isScrolled ? "scrolled" : ""}`}>
       <Header />
       <Sidebar />
-      <br /><br /><br /><br />
+      <br />
+      <br />
+      <br />
+      <h2>Interview on Integration of Madrassa</h2>
+      <div className="video-player">
+        <ReactPlayer 
+          url='https://www.youtube.com/watch?v=hTyvFP3J58I'
+          playing
+          controls
+          width='100%'
+          height='100%'
+        />
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
       <div className="containers bg-wheat">
-    <hr />
-      <h2>Blog List</h2>
-      <hr /><br />
+        <hr />
+        <h2>Blog List</h2>
+        <hr />
+        <br />
         <div className="card-containers bg-wheat">
-          {posts.map(post => (
+          {posts.map((post) => (
             <div key={post.id} className="col-md-4 mb-3">
               <div className="card bg-black">
                 <img src={post.image} alt={post.title} className="card-img" />
                 <div className="card-body">
                   <h5 className="card-title text-primary">{post.title}</h5>
                   <p className="card-text">{post.briefDescription}</p>
-                  <Link to={`/blog/${post.id}`} className="btn btn-primary">Read More</Link>
+                  <Link to={`/blog/${post.id}`} className="btn btn-primary">
+                    Read More
+                  </Link>
                 </div>
               </div>
             </div>

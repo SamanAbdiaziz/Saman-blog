@@ -9,6 +9,26 @@ body {
 
 }
 
+/* landingpage css */
+
+/* Add base styles for the video player */
+.video-player {
+  width: 60vw;
+  height: 60vh;
+  margin: auto; /* Center the video player */
+}
+
+/* Styles for mobile devices */
+@media screen and (max-width: 768px) {
+  .video-player {
+    width: 100vw; /* Full width on smaller screens */
+    height: 50vh; /* Adjust height automatically */
+  }
+}
+
+/* You can continue with the rest of your existing CSS here... */
+
+
 
 hr {
   border: none;
